@@ -1,3 +1,4 @@
+import 'package:films_app_flutter/routes/app_routes.dart';
 import 'package:films_app_flutter/structure/controllers/movies_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -22,13 +23,18 @@ class HomePage extends StatelessWidget {
               ? 0
               : moviesController.popularMovies.value.results!.length,*/
                   moviesController.popularMovies.value.results?.length ?? 0,
+              //4,
               itemBuilder: (context, index) {
-                return Container(
-                  margin: EdgeInsets.only(top: 10, left: 40, right: 20),
-                  color: Colors.yellow,
-                  child: Text(moviesController
-                          .popularMovies.value.results?[index].overview ??
-                      ''),
+                return TextButton(
+                  onPressed: () {
+                    Get.toNamed(Routes.DETAILS);
+                  },
+                  child: Container(
+                    color: Colors.yellow,
+                    child: Text(moviesController
+                            .popularMovies.value.results?[index].title ??
+                        ''),
+                  ),
                 );
               }),
         ));
