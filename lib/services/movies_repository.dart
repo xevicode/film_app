@@ -11,7 +11,8 @@ class MoviesRepository {
 
     print(body);
 
-    PopularMovies newPopularMovies = PopularMovies.fromJson(jsonDecode(body));
+    final PopularMovies newPopularMovies =
+        PopularMovies.fromJson(jsonDecode(body));
 
     print(newPopularMovies);
 
