@@ -27,7 +27,8 @@ class HomePage extends StatelessWidget {
                   margin: EdgeInsets.only(top: 10, left: 40, right: 20),
                   color: Colors.yellow,
                   child: Text(moviesController
-                      .popularMovies.value.results![index].originalTitle!),
+                          .popularMovies.value.results?[index].overview ??
+                      ''),
                 );
               }),
         ));
