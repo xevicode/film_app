@@ -13,6 +13,7 @@ class MoviesController extends GetxController {
   Future<void> getPopularMovies() async {
     final PopularMovies newPopularMovies =
         await MoviesRepository().popularMovies();
+    print(popularMovies.value);
     popularMovies.value = newPopularMovies;
   }
 }

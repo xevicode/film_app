@@ -5,17 +5,21 @@ import 'package:http/http.dart';
 
 class MoviesRepository {
   Future<PopularMovies> popularMovies() async {
-    Response bodyRes = await MoviesApiRepository().getReqResPopularMovies();
+    try {
+      Response bodyRes = await MoviesApiRepository().getReqResPopularMovies();
 
-    final body = bodyRes.body;
+      final body = bodyRes.body;
 
-    print(body);
+      print(body);
 
-    final PopularMovies newPopularMovies =
-        PopularMovies.fromJson(jsonDecode(body));
+      final PopularMovies newPopularMovies =
+          PopularMovies.fromJson(jsonDecode(body));
 
-    print(newPopularMovies);
+      print(newPopularMovies);
 
-    return newPopularMovies;
+      return newPopularMovies;
+    } catch (e) {
+      return PopularMovies();
+    }
   }
 }
