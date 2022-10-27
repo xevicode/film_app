@@ -11,11 +11,9 @@ class AppPages {
       page: () => HomePage(),
       binding: MoviesBinding(),
     ),
-    /*
     GetPage(
       name: Routes.DETAILS,
-      page: () => DetailsPage(index: null,),
+      page: () => DetailsPage(),
     )
-    */
   ];
 }

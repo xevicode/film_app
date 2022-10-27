@@ -14,8 +14,11 @@ class DetailsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //Solución 1
+    //Solución 1 || Solución2
     //MoviesController moviesController = Get.find();
+
+    //Solución 3
+    Movie newMovie = Get.arguments[0];
 
     return Scaffold(
       appBar: AppBar(),
@@ -23,15 +26,26 @@ class DetailsPage extends StatelessWidget {
         child: Column(
           children: [
             Text(
-                //Solución 1
-                // moviesController.popularMovies.value.results![index].title ??
-                //     'No hay datos para el título',
-                ''),
+              //Solución 1
+              // moviesController.popularMovies.value.results![index].title ??
+              //     'No hay datos para el título',
+              //Solución 2
+              //moviesController.newMovie.value.title ??
+              //    'No hay datos para el título',
+              //Solución 3
+              newMovie.title ?? 'No hay datos para el título',
+            ),
             Text(
-                //Solución 1
-                // moviesController.popularMovies.value.results![index].overview ??
-                //   'No hay datos para la descripción',
-                ''),
+              //Solución 1
+              // moviesController.popularMovies.value.results![index].overview ??
+              //   'No hay datos para la descripción',
+
+              //Solución 2
+              //moviesController.newMovie.value.overview ??
+              //    'No hay datos para la descripción',
+              //Solución 3
+              newMovie.overview ?? 'No hay datos para la descripción',
+            ),
           ],
         ),
       ),

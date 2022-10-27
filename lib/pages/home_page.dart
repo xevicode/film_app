@@ -1,3 +1,4 @@
+import 'package:films_app_flutter/models/movie_model.dart';
 import 'package:films_app_flutter/pages/details_page.dart';
 import 'package:films_app_flutter/routes/app_routes.dart';
 import 'package:films_app_flutter/structure/controllers/movies_controller.dart';
@@ -28,10 +29,20 @@ class HomePage extends StatelessWidget {
               itemBuilder: (context, index) {
                 return TextButton(
                   onPressed: () {
-                    // Get.toNamed(Routes.DETAILS);
-
                     //Solución 1
                     //Get.to(DetailsPage(index: index));
+
+                    //Solución 2
+                    /*
+                    moviesController.newMovie.value =
+                        moviesController.popularMovies.value.results?[index] ??
+                            Movie();
+                    Get.toNamed(Routes.DETAILS);
+                    */
+
+                    Get.toNamed(Routes.DETAILS, arguments: [
+                      moviesController.popularMovies.value.results![index]
+                    ]);
                   },
                   child: Container(
                     color: Colors.yellow,
