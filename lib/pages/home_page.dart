@@ -1,3 +1,4 @@
+import 'package:films_app_flutter/pages/details_page.dart';
 import 'package:films_app_flutter/routes/app_routes.dart';
 import 'package:films_app_flutter/structure/controllers/movies_controller.dart';
 import 'package:flutter/material.dart';
@@ -27,7 +28,10 @@ class HomePage extends StatelessWidget {
               itemBuilder: (context, index) {
                 return TextButton(
                   onPressed: () {
-                    Get.toNamed(Routes.DETAILS);
+                    // Get.toNamed(Routes.DETAILS);
+
+                    //Solución 1
+                    //Get.to(DetailsPage(index: index));
                   },
                   child: Container(
                     color: Colors.yellow,
