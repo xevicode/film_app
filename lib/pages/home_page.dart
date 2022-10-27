@@ -10,48 +10,51 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    MoviesController moviesController = Get.put(MoviesController());
-    return Scaffold(
-        floatingActionButton: FloatingActionButton(
-          onPressed: () async {
-            await moviesController.getPopularMovies();
-          },
-        ),
-        body: Obx(
-          () => ListView.builder(
-              itemCount:
+    // MoviesController moviesController = Get.find();
 
-                  /*(moviesController.popularMovies.value.results == null)
-              ? 0
-              : moviesController.popularMovies.value.results!.length,*/
-                  moviesController.popularMovies.value.results?.length ?? 0,
-              //4,
-              itemBuilder: (context, index) {
-                return TextButton(
-                  onPressed: () {
-                    //Solución 1
-                    //Get.to(DetailsPage(index: index));
+    return GetBuilder<MoviesController>(
+        init: MoviesController(),
+        builder: (moviesController) {
+          moviesController.getPopularMovies();
+          return Scaffold(
+              body: Obx(
+            () => ListView.builder(
+                itemCount:
 
-                    //Solución 2
-                    /*
-                    moviesController.newMovie.value =
+                    /*(moviesController.popularMovies.value.results == null)
+                  ? 0
+                  : moviesController.popularMovies.value.results!.length,*/
+                    moviesController.popularMovies.value.results?.length ?? 0,
+                //4,
+                itemBuilder: (context, index) {
+                  return TextButton(
+                    onPressed: () {
+                      //Solución 1
+                      //Get.to(DetailsPage(index: index));
+
+                      //Solución 2
+                      /*
+                 ; 
+      },
+    )       moviesController.newMovie.value =
                         moviesController.popularMovies.value.results?[index] ??
                             Movie();
                     Get.toNamed(Routes.DETAILS);
                     */
 
-                    Get.toNamed(Routes.DETAILS, arguments: [
-                      moviesController.popularMovies.value.results![index]
-                    ]);
-                  },
-                  child: Container(
-                    color: Colors.yellow,
-                    child: Text(moviesController
-                            .popularMovies.value.results?[index].title ??
-                        ''),
-                  ),
-                );
-              }),
-        ));
+                      Get.toNamed(Routes.DETAILS, arguments: [
+                        moviesController.popularMovies.value.results![index]
+                      ]);
+                    },
+                    child: Container(
+                      color: Colors.yellow,
+                      child: Text(moviesController
+                              .popularMovies.value.results?[index].title ??
+                          ''),
+                    ),
+                  );
+                }),
+          ));
+        });
   }
 }
