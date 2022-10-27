@@ -1,6 +1,6 @@
 import 'package:films_app_flutter/models/movie_model.dart';
-import 'package:films_app_flutter/pages/details_page.dart';
-import 'package:films_app_flutter/routes/app_routes.dart';
+import 'package:films_app_flutter/UI/pages/details_page.dart';
+import 'package:films_app_flutter/UI/routes/app_routes.dart';
 import 'package:films_app_flutter/structure/controllers/movies_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

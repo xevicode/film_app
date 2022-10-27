@@ -1,5 +1,5 @@
-import 'package:films_app_flutter/routes/app_pages.dart';
-import 'package:films_app_flutter/routes/app_routes.dart';
+import 'package:films_app_flutter/UI/routes/app_pages.dart';
+import 'package:films_app_flutter/UI/routes/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
