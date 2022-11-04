@@ -23,7 +23,7 @@ class SectionSearchFilmWidget extends StatelessWidget {
           children: [
             Text(
               text,
-              style: TextStyle(
+              style: const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 30,
@@ -50,6 +50,7 @@ class SectionSearchFilmWidget extends StatelessWidget {
                   SizedBox(
                     width: 5,
                   ),
+                  //TODO INPUT TEXT
                   Text(
                     "Search...",
                     style: TextStyle(
