@@ -61,6 +61,9 @@ class MoviesListWidget extends StatelessWidget {
                                 1,
                             src: urlImage(controller.popularMovies.value
                                 .results![index].posterPath!),
+                            overview: controller.popularMovies.value
+                                    .results?[index].overview ??
+                                '',
                           ),
                         );
                       }),

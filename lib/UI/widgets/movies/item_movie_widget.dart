@@ -9,11 +9,13 @@ class ItemMovieWidget extends StatelessWidget {
   final String title;
   final String src;
   final double rating;
+  final String overview;
   const ItemMovieWidget({
     Key? key,
     required this.title,
     required this.src,
     required this.rating,
+    required this.overview,
   }) : super(key: key);
 
   @override
@@ -33,8 +35,11 @@ class ItemMovieWidget extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: (() {
-                    Get.toNamed(Routes.DETAILS, arguments: src);
-                    //[ moviesController.popularMovies.value.results![0]            ]);
+                    Get.toNamed(Routes.DETAILS, arguments: {
+                      'src': src,
+                      'title': title,
+                      'overview': overview,
+                    });
                   }),
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(15),
