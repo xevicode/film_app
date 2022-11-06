@@ -25,7 +25,7 @@ class SectionFilmsWidget extends StatelessWidget {
             children: const [
               MoviesListWidget(),
               SizedBox(
-                height: 20,
+                height: 3,
               ),
               MoviesListWidget(),
             ],

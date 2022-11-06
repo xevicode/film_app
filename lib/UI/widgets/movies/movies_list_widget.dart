@@ -18,7 +18,7 @@ class MoviesListWidget extends StatelessWidget {
               top: 10,
               left: 20,
             ),
-            height: 400,
+            height: 300,
             width: double.infinity,
             child: Column(
               children: [
@@ -31,9 +31,7 @@ class MoviesListWidget extends StatelessWidget {
                       children: [
                         const Text(
                           "RECOMMENDED FOR YOU",
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
+                          style: TextStyle(color: Colors.white, fontSize: 12),
                         ),
                         TextButton(
                             onPressed: () {
@@ -53,11 +51,14 @@ class MoviesListWidget extends StatelessWidget {
                           controller.popularMovies.value.results?.length ?? 0,
                       itemBuilder: ((context, index) {
                         return Padding(
-                          padding: const EdgeInsets.only(right: 20.0),
+                          padding: const EdgeInsets.only(right: 15.0),
                           child: ItemMovieWidget(
                             title: controller.popularMovies.value
                                     .results?[index].originalTitle ??
                                 '',
+                            rating: controller.popularMovies.value
+                                    .results?[index].popularity ??
+                                1,
                             src: urlImage(controller.popularMovies.value
                                 .results![index].posterPath!),
                           ),
