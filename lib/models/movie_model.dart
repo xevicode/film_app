@@ -1,3 +1,5 @@
+import 'package:films_app_flutter/models/production_model.dart';
+
 class Movie {
   bool? adult;
   String? backdropPath;
@@ -11,8 +13,9 @@ class Movie {
   String? releaseDate;
   String? title;
   bool? video;
-  double? voteAverage;
+  dynamic voteAverage;
   int? voteCount;
+  List<ProductionCompanies>? production_companies;
 
   Movie(
       {this.adult,
@@ -28,7 +31,8 @@ class Movie {
       this.title,
       this.video,
       this.voteAverage,
-      this.voteCount});
+      this.voteCount,
+      this.production_companies});
 
   Movie.fromJson(Map<String, dynamic> json) {
     adult = json['adult'];
@@ -43,8 +47,14 @@ class Movie {
     releaseDate = json['release_date'];
     title = json['title'];
     video = json['video'];
-    voteAverage = double.parse(json['vote_average'].toString());
+    voteAverage = json['vote_average'];
     voteCount = json['vote_count'];
+    if (json['production_companies'] != null) {
+      production_companies = <ProductionCompanies>[];
+      json['production_companies'].forEach((v) {
+        production_companies?.add(ProductionCompanies.fromJson(v));
+      });
+    }
   }
 
   Map<String, dynamic> toJson() {
@@ -63,6 +73,10 @@ class Movie {
     data['video'] = video;
     data['vote_average'] = voteAverage;
     data['vote_count'] = voteCount;
+    if (production_companies != null) {
+      data['production_companies'] =
+          production_companies?.map((v) => v.toJson()).toList();
+    }
     return data;
   }
 }

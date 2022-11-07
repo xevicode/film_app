@@ -1,4 +1,4 @@
-import 'package:films_app_flutter/models/movie_model.dart';
+import 'movie_model.dart';
 
 class PopularMovies {
   int? page;
