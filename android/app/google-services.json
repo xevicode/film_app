@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "352931405061",
+    "project_id": "films-app-flutter-meu",
+    "storage_bucket": "films-app-flutter-meu.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:352931405061:android:f26d69dcbc2d605717eb6c",
+        "android_client_info": {
+          "package_name": "com.example.films_app_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "352931405061-ecct6metaaepnk8t7tepknrclmbnscm8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNnxn73da0pqOZ7mUkWUsuWnTxqu9w-lU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "352931405061-ecct6metaaepnk8t7tepknrclmbnscm8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
