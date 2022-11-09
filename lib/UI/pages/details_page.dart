@@ -1,10 +1,6 @@
 import 'package:films_app_flutter/UI/widgets/details/detaill_info.dart';
-import 'package:films_app_flutter/UI/widgets/movies/item_movie_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import '../../models/movie_model.dart';
-import '../../structure/controllers/movies_controller.dart';
 
 class DetailsPage extends StatelessWidget {
   @override

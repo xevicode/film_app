@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:get/get.dart';
 
-import '../../../structure/controllers/movies_controller.dart';
 import '../../routes/app_routes.dart';
 
 class ItemMovieWidget extends StatelessWidget {
