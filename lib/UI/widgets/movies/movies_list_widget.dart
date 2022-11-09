@@ -1,6 +1,7 @@
 import 'package:films_app_flutter/UI/utils/urls_db.dart';
 import 'package:films_app_flutter/UI/widgets/movies/item_movie_widget.dart';
 import 'package:films_app_flutter/structure/controllers/movies_controller.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -35,9 +36,9 @@ class MoviesListWidget extends StatelessWidget {
                         ),
                         TextButton(
                             onPressed: () {
-                              print("holaMundo");
+                              FirebaseAuth.instance.signOut();
                             },
-                            child: const Text("See all"))
+                            child: const Text("Sign Out"))
                       ],
                     ),
                   ),
