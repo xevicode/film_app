@@ -1,7 +1,7 @@
 import 'package:films_app_flutter/UI/pages/details_page.dart';
 import 'package:films_app_flutter/UI/pages/home_page.dart';
 import 'package:films_app_flutter/UI/pages/login_page.dart';
-import 'package:films_app_flutter/UI/pages/main_page.dart';
+import 'package:films_app_flutter/auth/main_page.dart';
 import 'package:films_app_flutter/UI/routes/app_routes.dart';
 import 'package:films_app_flutter/structure/bindings/movies_binding.dart';
 import 'package:get/get.dart';
@@ -14,7 +14,7 @@ class AppPages {
       binding: MoviesBinding(),
     ),
     GetPage(name: Routes.DETAILS, page: () => DetailsPage()),
-    GetPage(name: Routes.LOGIN_PAGE, page: () => const LoginPage()),
+    // GetPage(name: Routes.LOGIN_PAGE, page: () => const LoginPage()),
     GetPage(name: Routes.MAIN_PAGE, page: () => const MainPage()),
   ];
 }
