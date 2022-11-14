@@ -30,10 +30,20 @@ class _RegisterPageState extends State<RegisterPage> {
 
   Future signUp() async {
     if (passwordConfirmed()) {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
-        email: _emailController.text.trim(),
-        password: _passwordController.text.trim(),
-      );
+      try {
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: _emailController.text.trim(),
+          password: _passwordController.text.trim(),
+        );
+      } on FirebaseAuthException catch (e) {
+        Get.defaultDialog(
+            title: "Error",
+            middleText: e.message ?? e.code,
+            backgroundColor: Colors.deepPurple,
+            titleStyle: TextStyle(color: Colors.white),
+            middleTextStyle: TextStyle(color: Colors.white),
+            radius: 30);
+      }
     }
   }
 
@@ -210,3 +220,19 @@ class _RegisterPageState extends State<RegisterPage> {
     );
   }
 }
+
+
+
+
+/*
+
+ Get.defaultDialog(
+              title: "email ERROR",
+              middleText: "Este email ya está registrado",
+              backgroundColor: Colors.deepPurple,
+              titleStyle: TextStyle(color: Colors.white),
+              middleTextStyle: TextStyle(color: Colors.white),
+              radius: 30);
+
+
+ */
