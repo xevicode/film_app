@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class RegisterPage extends StatefulWidget {
@@ -42,6 +42,14 @@ class _RegisterPageState extends State<RegisterPage> {
         _confirmpasswordController.text.trim()) {
       return true;
     } else {
+      Get.defaultDialog(
+          title: "PASSWORD ERROR",
+          middleText: "Asegúrate de escrivir las dos contraseñas iguales",
+          backgroundColor: Colors.deepPurple,
+          titleStyle: TextStyle(color: Colors.white),
+          middleTextStyle: TextStyle(color: Colors.white),
+          radius: 30);
+      print('La contraseña es diferente');
       return false;
     }
   }
